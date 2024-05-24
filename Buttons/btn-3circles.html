@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3 circles</title>
+
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: rgb(24, 24, 24);
+      }
+
+      button {
+        color: yellow;
+        width: 200px;
+        height: 80px;
+        font-size: 30px;
+        border-radius: 10px;
+        border: none;        
+        background-color: transparent;
+        position: relative;
+        margin: 50px;
+        /* overflow: hidden; */
+        cursor: pointer;
+        transition: color 1s;
+      }
+
+      button:hover{
+        color: black;
+      }
+
+      button span {
+        transition: translate 0.1s, width 0.5s 0.5s, height 0.5s 0.5s;
+        width: 15px;
+        height: 15px;
+      }
+
+      button:hover span {
+        background-color: yellow;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        z-index: -1;
+      }
+
+      button::before {
+        content: "";
+        background-color: yellow;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: -50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.15s;
+        opacity: 0;
+      }
+
+      button::after {
+        content: "";
+        background-color: yellow;
+        width: 15px;
+        height: 15px;
+        z-index: -1;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 150%;
+        transform: translate(-50%, -50%);
+        transition: all 0.15s;
+        opacity: 0;
+
+
+      }
+
+      button:hover::before {
+        left: 50%;
+        opacity: 1;
+      }
+
+      button:hover::after {
+        left: 50%;
+        opacity: 1;
+
+      }
+    </style>
+  </head>
+  <body>
+    <button>HOVER ME<span></span></button>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button 1</title>
+
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      button {
+        width: 200px;
+        height: 80px;
+        font-size: 30px;
+        border-radius: 0;
+        border: 2px solid lightpink;
+        background-color: transparent;
+        position: relative;
+        margin: 50px;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      button:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: lightpink;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform: rotate(0deg);
+        transform-origin: (50%, 50%);
+        transition: all 1s;
+      }
+
+      button:hover:before {
+        transform: rotate(1turn);
+      }
+
+      button:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        top: 0;
+        right: 0;
+        position: absolute;
+        transform: rotate(0deg);
+        transform-origin: (50%, 50%);
+        transition: all 1s 0.15s;
+        z-index: -1;
+      }
+
+      button:hover:after {
+        transform: rotate(1turn);
+      }
+
+      button span {
+        width: 70px;
+        color: red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 1s !important;
+      }
+
+      button:hover > span {
+        color: tan;
+        transform: translate(-50%, -50%) rotate(1turn); 
+      }
+    </style>
+  </head>
+  <body>
+    <button><span>🌷</span></button>
+  </body>
+</html>

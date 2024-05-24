@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glowing Effect</title>
+
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+      }
+
+      button {
+        width: 200px;
+        height: 80px;
+        font-size: 30px;
+        border-radius: 0;
+        border: 2px solid white;
+        color: white;
+        background-color: transparent;
+        position: relative;
+        margin: 50px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.25s;
+      }
+
+      button::before {
+        content: "";
+        height: 100%;
+        width: 40px;
+        background-color: white;
+        position: absolute;
+        top:0;
+        left: 0;
+        transform: skew(45deg) translateX(-200%);
+        transform-origin: center;
+        transition: all 0.25s;
+      }
+
+      button:hover{
+        background-color: brown;
+      }
+
+      button:hover::before{
+        transform: skew(45deg) translateX(240px);
+
+      }
+    </style>
+  </head>
+  <body>
+    <button>Hover me</button>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotating button effect</title>
+
+    <style>
+      body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      button {
+        width: 200px;
+        height: 80px;
+        font-size: 20px;
+        border-radius: 0;
+        border: 1px solid black;
+        background-color: transparent;
+        position: relative;
+        margin: 50px;
+        overflow: hidden;
+        cursor: pointer;
+
+      }
+
+      button::before{
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: yellow;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(-90deg);
+        transform-origin: bottom left;
+        transition: all 1s;
+        z-index: -1;
+      }
+
+      button:hover::before{
+        transform: rotate(0deg);
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <button>Hover me</button>
+  </body>
+</html>
